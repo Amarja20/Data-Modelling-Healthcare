@@ -1,0 +1,68 @@
+erDiagram
+    FACT_APPOINTMENT {
+        SERIAL Fact_APT_PK PK "Primary Key"
+        INT appointment_id FK "Foreign Key to DimAppointment"
+        INT patient_id FK "Foreign Key to DimPatient"
+        INT clinic_id FK "Foreign Key to DimClinic"
+        INT scheduled_time_id FK "Foreign Key to DimTime"
+        INT actual_appointment_time FK "Foreign Key to DimTime"
+        TIMESTAMP created_at "Creation Timestamp"
+
+    }
+    DIM_APPOINTMENT {
+        INT appointment_id PK "Primary Key"
+        VARCHAR priority "Appointment Priority"
+        VARCHAR specialty "Specialty"
+        VARCHAR hospital "Hospital"
+        TIMESTAMP created_at "Creation Timestamp"
+}
+DIM_PREDICTION {
+        INT prediction_id PK "Primary Key"
+        VARCHAR prediction_batch "Batch Identifier"
+        NUMERIC probability_dna "Probability Score"
+        TIMESTAMP created_at "Creation Timestamp"
+
+}
+    FACT_PREDICTION {
+        SERIAL Fact_Predict_PK PK "PrimaryKey"
+        SERIAL FACTAP_PK FK "Foreign Key to FactAppointment"
+        INT prediction_id FK "Foreign Key to DimPrediction"
+        INT prediction_time_id FK "Foreign Key to DimTime"
+        TIMESTAMP created_at "Creation Timestamp"
+    }
+    
+    DIM_PATIENT {
+        INT patient_id PK "Primary Key"
+        VARCHAR first_name "First Name"
+        VARCHAR last_name "Last Name"
+        VARCHAR gender "Gender"
+        DATE dob "Date of Birth"
+        TIMESTAMP created_at "Creation Timestamp"
+    }
+    
+    DIM_CLINIC {
+        INT clinic_id PK "Primary Key"
+        VARCHAR clinic_name "Clinic Name"
+        VARCHAR location "Location"
+        TIMESTAMP created_at "Creation Timestamp"
+
+    }
+    
+    DIM_TIME {
+        SERIAL time_id PK "Primary Key"
+        DATE date "Date"
+        INT day "Day"
+        INT month "Month"
+        INT year "Year"
+        TIMESTAMP created_at "Creation Timestamp"
+
+    }
+    
+    %% Relationships
+    FACT_APPOINTMENT ||--o{ DIM_PATIENT : references
+    FACT_APPOINTMENT ||--o{ DIM_CLINIC : references
+    FACT_APPOINTMENT ||--o{ DIM_APPOINTMENT : references
+    FACT_APPOINTMENT ||--o{ DIM_TIME : references
+    FACT_PREDICTION ||--|| FACT_APPOINTMENT : references
+    FACT_PREDICTION ||--o{ DIM_TIME : references
+    FACT_PREDICTION ||--o{ DIM_PREDICTION : references
