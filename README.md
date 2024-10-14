@@ -1,9 +1,9 @@
 # Data-Modelling-Healthcare
 
-![AWS Architecture Diagram](https://github.com/user-attachments/assets/894024d1-01f5-4b88-a515-eeb94a638202)
-
 ## Project Overview
 This project focuses on optimizing healthcare data architecture using dimensional modelling, data warehousing, and real-time data processing. The goal is to create a scalable, efficient system for handling structured and unstructured healthcare data while supporting advanced analytics and machine learning workflows. The architecture leverages AWS services, combining traditional relational databases with real-time data streaming from NoSQL sources.
+
+![AWS Architecture Diagram](https://github.com/user-attachments/assets/894024d1-01f5-4b88-a515-eeb94a638202)
 
 ## Key Technologies Used:
 - **AWS S3**: Centralized storage for structured data (CSV, databases).
@@ -27,6 +27,8 @@ The healthcare data model follows a **star schema** with separated fact and dime
 
 - **Fact Tables**: Store measurable data (e.g., `FACT_APPOINTMENT`, `FACT_PREDICTION`) with foreign keys linking to dimension tables.
 - **Dimension Tables**: Store descriptive data (e.g., `DIM_APPOINTMENT`, `DIM_CLINIC`, `DIM_PATIENT`) enabling filtering and aggregation.
+
+![image](https://github.com/user-attachments/assets/6a20f87d-4837-4839-95c1-cd2b1cae62ce)
 
 ## Use Cases
 1. **Clinic Performance**: Identifying best-performing clinics by tracking delays between scheduled and actual appointment times.
