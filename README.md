@@ -1,4 +1,7 @@
 # Data-Modelling-Healthcare
+## Introduction
+
+This project focuses on building a scalable healthcare data architecture using AWS services. By implementing a dimensional star schema and the One Big Table (OBT) methodology, we optimize data for both transactional and analytical purposes. The architecture supports real-time data processing, advanced analytics, and machine learning models to provide actionable insights for healthcare management.
 
 ## Project Overview
 This project focuses on optimizing healthcare data architecture using dimensional modelling, data warehousing, and real-time data processing. The goal is to create a scalable, efficient system for handling structured and unstructured healthcare data while supporting advanced analytics and machine learning workflows. The architecture leverages AWS services, combining traditional relational databases with real-time data streaming from NoSQL sources.
