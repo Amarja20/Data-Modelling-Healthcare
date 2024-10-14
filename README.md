@@ -1,6 +1,6 @@
 # Data-Modelling-Healthcare
 
-![AWS Architecture Diagram](AWS Architecture Diagram.png)
+![AWS Architecture Diagram](https://github.com/user-attachments/assets/894024d1-01f5-4b88-a515-eeb94a638202)
 
 ## Project Overview
 This project focuses on optimizing healthcare data architecture using dimensional modelling, data warehousing, and real-time data processing. The goal is to create a scalable, efficient system for handling structured and unstructured healthcare data while supporting advanced analytics and machine learning workflows. The architecture leverages AWS services, combining traditional relational databases with real-time data streaming from NoSQL sources.
